@@ -602,12 +602,11 @@ p { margin: 0; }
 .carousel-track {
   display: flex;
   gap: 32px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding: 40px calc(50vw - 360px); /* Centre la carte active de 720px */
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; /* Empêche les barres et conflits de scroll */
+  padding: 40px 0;
+  cursor: grab;
+  user-select: none;
+}
 }
 .carousel-track::-webkit-scrollbar {
   display: none;
