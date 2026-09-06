@@ -250,29 +250,36 @@ p { margin: 0; }
   .nav-toggle { display: flex; }
 }
 
-/* ---------- Section Hero (Framer 1:1) ---------- */
+/* ---------- Section Hero (Plein format centré) ---------- */
 
 .hero {
-  padding: 10px 0 60px;
+  width: 100%;
+  padding: 20px 0 60px;
   background: #EAF8F6;
+  box-sizing: border-box;
 }
 
 .hero-wrap {
-  max-width: 1240px;
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .hero-frame {
   position: relative;
-  width: 100%;
-  height: 640px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 620px;
+  height: clamp(540px, 68vh, 700px);
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  margin: 0 auto;
 }
 
-/* Image plein cadre */
+/* Image d'arrière-plan panoramique */
 .hero-bg-img {
   position: absolute;
   top: 0;
@@ -280,11 +287,11 @@ p { margin: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 35%;
   z-index: 1;
 }
 
-/* Léger voile pour garantir le contraste du texte blanc */
+/* Filtre de contraste pour les textes */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -292,12 +299,12 @@ p { margin: 0; }
     to bottom,
     rgba(0, 0, 0, 0.15) 0%,
     rgba(0, 0, 0, 0.05) 40%,
-    rgba(0, 0, 0, 0.55) 100%
+    rgba(0, 0, 0, 0.6) 100%
   );
   z-index: 2;
 }
 
-/* Badge avis en haut au centre */
+/* Badge avis centré en haut */
 .hero-top-badge {
   position: absolute;
   top: 28px;
@@ -307,12 +314,13 @@ p { margin: 0; }
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 6px 16px 6px 8px;
   border-radius: 999px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
 }
 
 .avatar-group {
@@ -350,59 +358,59 @@ p { margin: 0; }
   color: #0E1B1A;
 }
 
-/* Disposition basse : Titre à gauche, CTA à droite */
+/* Disposition basse : Titre à gauche, Description + CTA à droite */
 .hero-bottom-grid {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 48px 52px;
+  padding: 48px 56px;
   z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 32px;
+  gap: 40px;
 }
 
 .hero-left-col {
   flex: 1;
+  max-width: 650px;
 }
 
 .hero-title {
   color: #FFFFFF;
-  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.03em;
   margin: 0;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
 }
 
 .hero-right-col {
-  flex: 0 0 260px;
+  flex: 0 0 280px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
+  gap: 20px;
 }
 
 .hero-subtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.02rem;
   line-height: 1.45;
   margin: 0;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
-/* Bouton vert émeraude du hero */
 .btn-pill--hero {
   background: #068F8A;
   color: #FFFFFF;
-  padding: 10px 14px 10px 20px;
+  padding: 12px 16px 12px 24px;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -414,26 +422,24 @@ p { margin: 0; }
   transform: translateY(-2px);
 }
 
-/* Mobile responsive */
+/* Adaptation pour tablette et mobile */
 @media (max-width: 860px) {
   .hero-frame {
-    height: 560px;
+    height: auto;
+    min-height: 540px;
   }
   .hero-bottom-grid {
+    position: relative;
+    padding: 140px 24px 36px;
     flex-direction: column;
     align-items: flex-start;
-    padding: 30px 24px;
-    gap: 20px;
+    gap: 24px;
   }
   .hero-right-col {
     flex: none;
     width: 100%;
   }
-  .hero-title {
-    font-size: 2.2rem;
-  }
 }
-
 /* ---------- Section À Propos (Structure 100% Verticale) ---------- */
 
 .section-about-vertical {
