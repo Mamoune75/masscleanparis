@@ -21,33 +21,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   elements.forEach((el) => observer.observe(el));
 });
-
-// Contrôles carrousel avis
-const track = document.getElementById('testimonialTrack');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-if (track && prevBtn && nextBtn) {
-  prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -track.offsetWidth * 0.7, behavior: 'smooth' });
-  });
-
-  nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: track.offsetWidth * 0.7, behavior: 'smooth' });
-  });
-}
-
-// Contrôles carrousel avis
-const track = document.getElementById('testimonialTrack');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-if (track && prevBtn && nextBtn) {
-  prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -track.offsetWidth * 0.7, behavior: 'smooth' });
-  });
-
-  nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: track.offsetWidth * 0.7, behavior: 'smooth' });
-  });
-}
