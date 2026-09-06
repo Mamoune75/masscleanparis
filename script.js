@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* 1. Animation d'apparition au défilement */
+  /* --------------------------------------------------------------------------
+     1. Animations au défilement (Scroll Reveal)
+     -------------------------------------------------------------------------- */
   const revealElements = document.querySelectorAll(
     'section:not(.section-avis-carousel), .hero-content, article:not(.carousel-card), details, .cta-banner'
   );
@@ -22,40 +24,51 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach((el) => observer.observe(el));
 
 
-  /* 2. Carrousel Avis : Glisse nette avec retour en boucle */
+  /* --------------------------------------------------------------------------
+     2. Contrôles du Carrousel Avis Clients (Flèches + Centrage initial)
+     -------------------------------------------------------------------------- */
   const track = document.getElementById('testimonialTrack');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
 
-  if (track && prevBtn && nextBtn) {
-    const getScrollStep = () => {
-      const card = track.querySelector('.carousel-card');
-      return card ? card.offsetWidth + 28 : 608;
+  if (track) {
+    const cards = track.querySelectorAll('.carousel-card');
+
+    // Fonction pour centrer une carte donnée au milieu de l'écran
+    const centerCard = (card, behavior = 'smooth') => {
+      if (!card) return;
+      const trackCenter = track.offsetWidth / 2;
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      track.scrollTo({
+        left: cardCenter - trackCenter,
+        behavior: behavior
+      });
     };
 
-    nextBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const step = getScrollStep();
-      const maxScroll = track.scrollWidth - track.clientWidth;
+    // Centre automatiquement la 2e carte (Mohamed / TASTY) dès l'ouverture
+    if (cards.length > 1) {
+      setTimeout(() => {
+        centerCard(cards[1], 'instant');
+      }, 50);
+    }
 
-      if (track.scrollLeft >= maxScroll - 30) {
-        track.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        track.scrollBy({ left: step, behavior: 'smooth' });
-      }
-    });
+    // Navigation avec les flèches
+    if (prevBtn && nextBtn) {
+      const getScrollStep = () => {
+        const firstCard = cards[0];
+        return firstCard ? firstCard.offsetWidth + 32 : 500;
+      };
 
-    prevBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const step = getScrollStep();
-      const maxScroll = track.scrollWidth - track.clientWidth;
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+      });
 
-      if (track.scrollLeft <= 30) {
-        track.scrollTo({ left: maxScroll, behavior: 'smooth' });
-      } else {
-        track.scrollBy({ left: -step, behavior: 'smooth' });
-      }
-    });
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+      });
+    }
   }
 
 });
