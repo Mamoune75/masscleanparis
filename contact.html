@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — MASS CLEAN PARIS</title>
+<meta name="description" content="Discutons de votre besoin de nettoyage de vitres en Île-de-France. Devis gratuit et réponse rapide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><img src="assets/logo-icon.png" alt="Logo Mass Clean Paris" class="brand-mark-img"> MASS CLEAN PARIS</a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À Propos</a></li>
+        <li><a href="index.html#solutions">Solutions</a></li>
+        <li><a href="index.html#avis">Avis Clients</a></li>
+        <li><a href="contact.html" aria-current="page">Discutons</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-pill">Discutons <span class="btn-pill-arrow">&#8250;</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <p class="kicker">Contact</p>
+      <h1 style="max-width: 20ch; margin-bottom: 16px;">Discutons de votre besoin</h1>
+      <p class="lede">Vous souhaitez que vos vitres retrouvent une transparence parfaite ? Contactez-nous. Que vous soyez particulier ou professionnel, nous étudions votre demande et vous répondons en quelques minutes.</p>
+
+      <div class="contact-layout" style="margin-top: 48px;">
+        <div class="contact-info">
+          <a href="tel:+33659571248" class="info-card">
+            <span>Téléphone</span>
+            <strong>(+33) 06 59 57 12 48</strong>
+          </a>
+          <a href="mailto:masscleanparis@gmail.com" class="info-card">
+            <span>E-mail</span>
+            <strong>masscleanparis@gmail.com</strong>
+          </a>
+          <a href="https://linktr.ee/masscleanparis" class="info-card">
+            <span>Tous nos liens</span>
+            <strong>linktr.ee/masscleanparis</strong>
+          </a>
+          <div>
+            <span style="display:block;font-size:0.82rem;color:var(--ink-soft);margin-bottom:10px;">Suivez-nous</span>
+            <div class="social-row">
+              <a href="https://www.linkedin.com/company/mass-clean-paris/">LinkedIn</a>
+              <a href="https://www.instagram.com/">Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=61591410992182">Facebook</a>
+              <a href="https://www.tiktok.com/@masscleanparis">TikTok</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="card" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none;"><label>Ne pas remplir : <input name="bot-field"></label></p>
+
+          <div class="field">
+            <label>Je suis :</label>
+            <div class="radio-group">
+              <label class="radio-pill"><input type="radio" name="profil" value="Particulier" checked> Particulier</label>
+              <label class="radio-pill"><input type="radio" name="profil" value="Professionnel"> Professionnel</label>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="nom">Nom / Société</label>
+              <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="field">
+              <label for="ville">Ville / Code Postal</label>
+              <input type="text" id="ville" name="ville" required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
+              <label for="tel">Numéro de téléphone</label>
+              <input type="tel" id="tel" name="tel" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>J'ai besoin d'un nettoyage :</label>
+            <div class="radio-group">
+              <label class="radio-pill"><input type="radio" name="frequence" value="Ponctuel" checked> Ponctuel</label>
+              <label class="radio-pill"><input type="radio" name="frequence" value="Mensuel"> Mensuel</label>
+              <label class="radio-pill"><input type="radio" name="frequence" value="Trimestriel"> Trimestriel</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Décrivez-nous votre besoin : nombre de vitres, accessibilité, délai souhaité..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+          <p class="form-note">Ce formulaire est prêt pour Netlify Forms (détection automatique à l'hébergement). Sur un autre hébergeur, remplacez l'action par votre propre service de formulaire (Formspree, etc.).</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="kicker" style="margin-left:auto;margin-right:auto;">FAQ</p>
+        <h2>Les réponses à vos interrogations</h2>
+        <p class="lede" style="margin: 16px auto 0; text-align:center;">Tout ce qu'il faut savoir avant de prendre rendez-vous.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item"><summary>Quelle est votre zone d'intervention ?</summary><p class="faq-a">Que vous soyez particulier ou professionnel, nous intervenons dans toute la région Île-de-France, et même plus loin si affinités.</p></details>
+        <details class="faq-item"><summary>Qui peut bénéficier de vos services ?</summary><p class="faq-a">Nos services s'adressent tant aux particuliers qu'aux professionnels. Nous adaptons nos prestations de nettoyage à chaque exigence.</p></details>
+        <details class="faq-item"><summary>Vos services sont-ils éligibles au crédit d'impôt de 50% ?</summary><p class="faq-a">Oui, si vous êtes un particulier, vous bénéficiez de 50 % de crédit d'impôt au moment du paiement de la facture. Si vous êtes un professionnel, l'avantage est différent : notre facture est une charge entièrement déductible de vos résultats.</p></details>
+        <details class="faq-item"><summary>Combien coûte un nettoyage de vitres ?</summary><p class="faq-a">Le tarif est calculé sur-mesure. Il dépend du nombre de vitres, de leur accessibilité et du nombre d'interventions souhaitées. Nous vous envoyons un devis personnalisé, transparent et gratuit en quelques minutes.</p></details>
+        <details class="faq-item"><summary>Quels types de matériels et de produits utilisez-vous ?</summary><p class="faq-a">Nous utilisons exclusivement des équipements professionnels. Nos produits sont éco-responsables et notre matériel garantit un nettoyage impeccable sans danger pour vos sols ou votre mobilier.</p></details>
+        <details class="faq-item"><summary>Êtes-vous prêts à parier sur la transparence totale de mes vitres ?</summary><p class="faq-a">Absolument. Notre signature, c'est la perfection. Si le moindre reflet ou la moindre trace persiste après notre intervention, nous corrigeons le tir immédiatement.</p></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand brand-footer"><img src="assets/logo-icon.png" alt="Logo Mass Clean Paris" class="brand-mark-img brand-mark-img--light"> MASS CLEAN PARIS</a>
+        <p>Recevez nos offres et conseils d'entretien. En vous inscrivant, vous acceptez notre politique de confidentialité.</p>
+      </div>
+      <div>
+        <h4>Le site</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À Propos</a></li>
+          <li><a href="index.html#solutions">Solutions</a></li>
+          <li><a href="index.html#avis">Avis Clients</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions.html">Mentions Légales</a></li>
+          <li><a href="mentions.html#cgv">CGV</a></li>
+          <li><a href="https://linktr.ee/masscleanparis">Linktree</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Suivez-nous</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/company/mass-clean-paris/">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61591410992182">Facebook</a></li>
+          <li><a href="https://www.tiktok.com/@masscleanparis">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MASS CLEAN PARIS. Tous droits réservés.</span>
+      <span>(+33) 06 59 57 12 48 · masscleanparis@gmail.com</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
