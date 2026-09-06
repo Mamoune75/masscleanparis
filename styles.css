@@ -250,72 +250,189 @@ p { margin: 0; }
   .nav-toggle { display: flex; }
 }
 
-/* ---------- Hero Framer Section ---------- */
+/* ---------- Section Hero (Framer 1:1) ---------- */
 
-.hero { padding: 32px 0 60px; }
+.hero {
+  padding: 10px 0 60px;
+  background: #EAF8F6;
+}
+
+.hero-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .hero-frame {
   position: relative;
-  border-radius: var(--radius-lg);
+  width: 100%;
+  height: 640px;
+  border-radius: 28px;
   overflow: hidden;
-  min-height: 580px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
+
+/* Image plein cadre */
 .hero-bg-img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
   z-index: 1;
 }
-.hero-frame::after {
-  content: "";
+
+/* Léger voile pour garantir le contraste du texte blanc */
+.hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.65) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.05) 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
   z-index: 2;
 }
-.hero-content {
-  position: relative;
+
+/* Badge avis en haut au centre */
+.hero-top-badge {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 3;
-  max-width: 860px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px 16px 6px 8px;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  background: var(--white);
-  padding: 8px 18px 8px 10px;
-  border-radius: 999px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  margin-bottom: 30px;
-}
 .avatar-group {
   display: flex;
   align-items: center;
 }
+
 .avatar-img {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 2px solid #FFFFFF;
   margin-left: -8px;
   object-fit: cover;
 }
-.avatar-img:first-child { margin-left: 0; }
-.badge-text-group { text-align: left; }
-.stars { color: #F5A623; font-size: 0.85rem; letter-spacing: 2px; }
-.badge-label { font-size: 0.82rem; font-weight: 700; color: var(--ink); display: block; }
+.avatar-img:first-child {
+  margin-left: 0;
+}
 
-.hero-title { margin-bottom: 20px; }
-.hero-subtitle { font-size: 1.25rem; color: var(--ink-soft); margin-bottom: 34px; }
-.hero-actions { display: flex; justify-content: center; }
+.badge-text-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-text-group .stars {
+  color: #E85D3B;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.badge-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0E1B1A;
+}
+
+/* Disposition basse : Titre à gauche, CTA à droite */
+.hero-bottom-grid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 48px 52px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+}
+
+.hero-left-col {
+  flex: 1;
+}
+
+.hero-title {
+  color: #FFFFFF;
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hero-right-col {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  margin: 0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Bouton vert émeraude du hero */
+.btn-pill--hero {
+  background: #068F8A;
+  color: #FFFFFF;
+  padding: 10px 14px 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn-pill--hero:hover {
+  background: #057b77;
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 860px) {
+  .hero-frame {
+    height: 560px;
+  }
+  .hero-bottom-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 24px;
+    gap: 20px;
+  }
+  .hero-right-col {
+    flex: none;
+    width: 100%;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
 
 /* ---------- Section À Propos (Structure 100% Verticale) ---------- */
 
