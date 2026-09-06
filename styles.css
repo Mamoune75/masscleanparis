@@ -317,41 +317,37 @@ p { margin: 0; }
 .hero-subtitle { font-size: 1.25rem; color: var(--ink-soft); margin-bottom: 34px; }
 .hero-actions { display: flex; justify-content: center; }
 
-/* ---------- Section À Propos Intro (Alignement Framer) ---------- */
+/* ---------- Section À Propos (Structure 100% Verticale) ---------- */
 
-.section-about-intro {
-  padding: 100px 0;
+.section-about-vertical {
+  padding: 90px 0;
   background: #FFFFFF;
 }
 
-.about-split-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.about-left-col {
+.about-vertical-stack {
+  max-width: 860px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
 }
 
-.about-main-heading {
-  font-size: clamp(2rem, 3.4vw, 3rem);
+.about-v-heading {
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: #0E1B1A;
-  margin: 0 0 36px 0;
+  margin: 0 0 28px 0;
+  max-width: 26ch;
 }
 
-.about-btn-wrap {
-  margin-top: auto;
+.about-v-cta {
+  margin-bottom: 48px;
 }
 
-/* Bouton vert menthe avec flèche foncée */
+/* Bouton turquoise avec flèche circulaire sombre */
 .btn-pill--teal {
   background: #B6FFF2;
   color: #054844;
@@ -359,6 +355,10 @@ p { margin: 0; }
   padding: 6px 6px 6px 24px;
   font-weight: 700;
   font-size: 0.95rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 }
 .btn-pill--teal:hover {
   background: #A0FCEB;
@@ -368,24 +368,31 @@ p { margin: 0; }
   color: #FFFFFF;
   width: 38px;
   height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.2rem;
 }
 
-/* Colonne de droite : Cartes empilées verticalement */
-.about-right-col {
+/* Cartes vertes empilées sous le CTA */
+.about-cards-stack {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-align: left;
 }
 
 .about-card {
   background: #EAF8F6;
   border: 1px solid #DCF2EE;
   border-radius: 20px;
-  padding: 32px 34px;
+  padding: 30px 34px;
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  box-sizing: border-box;
 }
 
 .about-card-sparkle {
@@ -407,17 +414,14 @@ p { margin: 0; }
   font-weight: 700;
 }
 
-/* Adaptation responsive pour smartphones et tablettes */
-@media (max-width: 960px) {
-  .about-split-layout {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
+@media (max-width: 640px) {
   .about-card {
-    padding: 24px 26px;
+    padding: 22px;
+  }
+  .about-v-heading {
+    font-size: 1.9rem;
   }
 }
-
 /* ---------- Solutions Framer Cards ---------- */
 
 .section-solutions { padding: 90px 0; background: var(--mint-bg); }
