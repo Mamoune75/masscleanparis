@@ -422,100 +422,131 @@ p { margin: 0; }
     font-size: 1.9rem;
   }
 }
-/* ---------- Solutions Framer Cards ---------- */
+/* ---------- Section Solutions (Framer Exact Match) ---------- */
 
-.section-solutions { padding: 90px 0; background: var(--mint-bg); }
-.section-head { max-width: 680px; margin-bottom: 56px; }
-.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-solutions {
+  padding: 100px 0;
+  background: #EAF8F6;
+}
 
-.solutions-stack { display: grid; gap: 32px; }
+.solutions-header {
+  max-width: 780px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
 
-.solution-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
+.solutions-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #0E1B1A;
+  margin-top: 14px;
+}
+
+.solutions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.framer-plan-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  border: 1px solid #DCF2EE;
   padding: 48px;
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
-  box-shadow: 0 6px 24px rgba(4, 82, 79, 0.04);
+  box-shadow: 0 4px 20px rgba(5, 143, 138, 0.04);
 }
-.solution-card--featured {
-  background: #023B38;
-  color: #FFFFFF;
-  border-color: #023B38;
-}
-.solution-card--featured h3 { color: #FFFFFF; }
-.solution-card--featured .solution-desc { color: #D5F7F3; }
-.solution-card--featured .solution-tag {
-  background: rgba(255, 255, 255, 0.12);
-  color: #C4FFF9;
-}
-.solution-card--featured .solution-points li {
-  background: rgba(255, 255, 255, 0.08);
-  color: #FFFFFF;
-}
-.solution-card--featured .check-bullet { background: #FFFFFF; color: #023B38; }
 
-.solution-copy { display: flex; flex-direction: column; gap: 20px; }
-.solution-tag {
-  align-self: flex-start;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  background: #EAF8F6;
-  color: var(--teal-900);
-  padding: 6px 14px;
-  border-radius: 999px;
+.plan-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
-.solution-desc { font-size: 1.05rem; color: var(--ink-soft); }
 
-.solution-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-.solution-points li {
+.plan-title {
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  font-weight: 800;
+  color: #0E1B1A;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.plan-description {
+  font-size: 1.05rem;
+  color: #4B6462;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  max-width: 48ch;
+}
+
+.plan-checklist {
+  list-style: none;
+  margin: 0 0 34px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.plan-checklist li {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #F8FCFB;
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   font-weight: 500;
+  color: #0E1B1A;
 }
-.check-bullet {
+
+.check-icon {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: var(--teal-900);
-  color: #FFFFFF;
+  background: #B6FFF2;
+  color: #04524F;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   flex-shrink: 0;
 }
 
-.solution-media {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  height: 100%;
-  min-height: 340px;
+.plan-action {
+  margin-top: auto;
 }
-.solution-media img {
+
+.plan-visual {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 380px;
+  background: #DCF2EE;
+}
+
+.plan-visual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-@media (max-width: 900px) {
-  .solution-card {
+/* Responsive tablette & mobile */
+@media (max-width: 960px) {
+  .framer-plan-card {
     grid-template-columns: 1fr;
     padding: 32px 24px;
     gap: 32px;
   }
-  .solution-media { min-height: 260px; }
+  .plan-visual {
+    height: 260px;
+  }
 }
 
 /* ---------- Section Chiffres Clés ---------- */
