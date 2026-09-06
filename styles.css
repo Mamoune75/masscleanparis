@@ -249,7 +249,7 @@ p { margin: 0; }
 
 .hero {
   width: 100%;
-  padding: 16px 0 60px;
+  padding: 8px 0 48px;
   background: #EAF8F6;
   box-sizing: border-box;
 }
@@ -257,21 +257,21 @@ p { margin: 0; }
 .hero-wrap,
 .hero .wrap {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px; /* Élargit le cadre sur les côtés */
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
   box-sizing: border-box;
-  display: block !important; /* Casse définitivement l'ancien grid */
+  display: block !important;
 }
 
 .hero-frame {
   position: relative;
   width: 100%;
-  min-height: 600px;
-  height: clamp(540px, 68vh, 700px);
-  border-radius: 28px;
+  min-height: 720px; /* Plus d'impact vertical */
+  height: clamp(680px, 82vh, 880px);
+  border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
   margin: 0 auto;
 }
 
