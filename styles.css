@@ -582,30 +582,29 @@ p { margin: 0; }
   margin-bottom: 12px;
 }
 .stat-card span { font-size: 1rem; color: #D5F7F3; }
-
 /* ---------- Carrousel Avis Clients Framer ---------- */
 
 .section-avis-carousel {
-  padding: 100px 0 80px;
+  padding: 90px 0 80px;
   background: #EAF8F6;
   overflow: hidden;
 }
 
 .carousel-heading {
-  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: #0E1B1A;
 }
 
-/* Piste de défilement toujours parfaitement centrée */
+/* Piste fluide avec centrage direct */
 .carousel-track {
   display: flex;
   gap: 28px;
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  /* (50vw - la moitié d'une carte) pour aligner pile au centre */
-  padding: 30px calc(50vw - 280px);
+  padding: 30px calc(50vw - 290px);
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
@@ -613,20 +612,20 @@ p { margin: 0; }
   display: none;
 }
 
-/* Carte plus compacte et équilibrée */
+/* Carte taille Framer */
 .carousel-card {
-  flex: 0 0 560px;
-  width: 560px;
+  flex: 0 0 580px;
   max-width: 82vw;
+  scroll-snap-align: center;
   background: #068F8A;
   color: #FFFFFF;
   border-radius: 24px;
-  padding: 36px 40px;
+  padding: 38px 42px;
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
-  gap: 24px;
+  gap: 28px;
   align-items: center;
-  box-shadow: 0 14px 32px rgba(4, 82, 79, 0.12);
+  box-shadow: 0 12px 30px rgba(4, 82, 79, 0.12);
   box-sizing: border-box;
 }
 
@@ -638,22 +637,22 @@ p { margin: 0; }
 }
 
 .card-quote {
-  font-size: 0.98rem;
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #E6FAF7;
 }
 
 .card-author {
-  margin-top: 18px;
+  margin-top: 20px;
 }
 .card-author strong {
   display: block;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: #FFFFFF;
 }
 .card-author span {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #9DEAE4;
   margin-top: 2px;
 }
@@ -671,20 +670,49 @@ p { margin: 0; }
 }
 
 .client-brand-text {
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   color: #FFFFFF;
   text-align: center;
 }
 
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid #DCF2EE;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.15rem;
+  color: #0E1B1A;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.carousel-btn:hover {
+  background: #F0FAF9;
+  transform: translateY(-2px);
+}
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 768px) {
   .carousel-track {
-    padding: 24px calc(50vw - 42vw);
+    padding: 24px 20px;
   }
   .carousel-card {
-    flex: 0 0 84vw;
-    width: 84vw;
+    flex: 0 0 85vw;
     grid-template-columns: 1fr;
     padding: 28px 20px;
     gap: 20px;
