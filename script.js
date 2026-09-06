@@ -1,33 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* --------------------------------------------------------------------------
-     1. Animations au défilement (Scroll Reveal prononcé)
-     -------------------------------------------------------------------------- */
-  const elements = document.querySelectorAll(
-    'section, .hero-content, article, details, .cta-banner'
-  );
-
-  elements.forEach((el) => {
-    el.classList.add('reveal');
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.05,
-    rootMargin: '0px 0px -50px 0px'
-  });
-
-  elements.forEach((el) => observer.observe(el));
-
-
- /* --------------------------------------------------------------------------
-     2. Contrôles du Carrousel Avis Clients (Flèches + Centrage initial)
+/* --------------------------------------------------------------------------
+     2. Contrôles du Carrousel Avis Clients (Boucle infinie + Flèches)
      -------------------------------------------------------------------------- */
   const track = document.getElementById('testimonialTrack');
   const prevBtn = document.getElementById('prevBtn');
@@ -36,41 +8,50 @@ document.addEventListener('DOMContentLoaded', () => {
   if (track) {
     const cards = track.querySelectorAll('.carousel-card');
 
-    // Fonction pour centrer une carte donnée au milieu de l'écran
-    const centerCard = (card, behavior = 'smooth') => {
-      if (!card) return;
-      const trackCenter = track.offsetWidth / 2;
-      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-      track.scrollTo({
-        left: cardCenter - trackCenter,
-        behavior: behavior
-      });
-    };
-
-    // Centre automatiquement la 2e carte (Mohamed / TASTY) dès l'ouverture
+    // Centrage initial sur le 2e avis au chargement
     if (cards.length > 1) {
       setTimeout(() => {
-        centerCard(cards[1], 'instant');
-      }, 50);
+        const trackCenter = track.offsetWidth / 2;
+        const cardCenter = cards[1].offsetLeft + cards[1].offsetWidth / 2;
+        track.scrollTo({
+          left: cardCenter - trackCenter,
+          behavior: 'instant'
+        });
+      }, 60);
     }
 
-    // Navigation avec les flèches
     if (prevBtn && nextBtn) {
       const getScrollStep = () => {
         const firstCard = cards[0];
         return firstCard ? firstCard.offsetWidth + 32 : 500;
       };
 
-      prevBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-      });
-
+      // Clic Suivant (→)
       nextBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        const step = getScrollStep();
+        const maxScrollLeft = track.scrollWidth - track.clientWidth;
+
+        // Si on est rendu à la fin (ou presque à moins de 30px du bout), on reboucle au tout début
+        if (track.scrollLeft >= maxScrollLeft - 30) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: step, behavior: 'smooth' });
+        }
+      });
+
+      // Clic Précédent (←)
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const step = getScrollStep();
+        const maxScrollLeft = track.scrollWidth - track.clientWidth;
+
+        // Si on est tout au début (à moins de 30px), on boucle vers la toute dernière carte
+        if (track.scrollLeft <= 30) {
+          track.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+        } else {
+          track.scrollBy({ left: -step, behavior: 'smooth' });
+        }
       });
     }
   }
-
-});
