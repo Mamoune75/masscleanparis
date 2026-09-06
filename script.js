@@ -28,12 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('nextBtn');
 
   if (track && prevBtn && nextBtn) {
-    // Centre directement le 2e avis au chargement
-    const cards = track.querySelectorAll('.carousel-card');
-    if (cards[1]) {
-      cards[1].scrollIntoView({ behavior: 'instant', inline: 'center', block: 'nearest' });
-    }
-
     const getScrollStep = () => {
       const card = track.querySelector('.carousel-card');
       return card ? card.offsetWidth + 28 : 608;
