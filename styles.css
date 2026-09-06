@@ -584,45 +584,143 @@ p { margin: 0; }
 .stat-card span { font-size: 1rem; color: #D5F7F3; }
 
 /* ---------- Avis Clients Framer ---------- */
+/* ---------- Carrousel Avis Clients Framer ---------- */
 
-.section-avis { padding: 90px 0; }
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
+.section-avis-carousel {
+  padding: 90px 0;
+  background: #EAF8F6;
+  overflow: hidden;
 }
-.testimonial-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 32px;
+
+.carousel-heading {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0E1B1A;
+}
+
+/* Piste horizontale avec snap fluide */
+.carousel-track {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 40px 10vw;
+  scrollbar-width: none; /* Masque la barre sous Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Masque la barre sous Chrome/Safari */
+}
+
+/* Carte grand format Framer */
+.carousel-card {
+  flex: 0 0 clamp(320px, 68vw, 760px);
+  scroll-snap-align: center;
+  background: #068F8A;
+  color: #FFFFFF;
+  border-radius: 28px;
+  padding: 44px 48px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: center;
+  box-shadow: 0 16px 36px rgba(4, 82, 79, 0.16);
+  box-sizing: border-box;
+}
+
+.card-quote-col {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  justify-content: space-between;
+  height: 100%;
+  min-height: 220px;
 }
-.stars-card { color: #F5A623; font-size: 0.95rem; letter-spacing: 2px; }
-.testimonial-text { font-size: 1.02rem; color: var(--ink); line-height: 1.6; }
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: auto;
+
+.card-quote {
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.6;
+  color: #E6FAF7;
 }
-.avatar-letter {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #D5F6F1;
-  color: var(--teal-950);
-  font-weight: 700;
+
+.card-author strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+.card-author span {
+  display: block;
+  font-size: 0.82rem;
+  color: #9DEAE4;
+  margin-top: 2px;
+}
+
+/* Logo client à droite */
+.card-logo-col {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 30px 20px;
+  height: 100%;
+  min-height: 160px;
 }
-.testimonial-author strong { display: block; font-size: 0.95rem; }
-.testimonial-author span { display: block; font-size: 0.82rem; color: var(--ink-soft); }
+
+.client-brand-text {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+/* Boutons flèches */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.carousel-btn {
+  width: 46px;
+  height: 46px;
+  background: #FFFFFF;
+  border: 1px solid #DCF2EE;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #0E1B1A;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.carousel-btn:hover {
+  background: #F0FAF9;
+  transform: translateY(-2px);
+}
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .carousel-card {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+  .carousel-track {
+    padding: 30px 20px;
+  }
+  .card-logo-col {
+    min-height: 110px;
+  }
+}
 
 /* ---------- FAQ Framer Style ---------- */
 
