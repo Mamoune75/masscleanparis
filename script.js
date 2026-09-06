@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* --------------------------------------------------------------------------
-     1. Animations au défilement de la page (Scroll Reveal)
+     1. Animations au défilement (Scroll Reveal)
      -------------------------------------------------------------------------- */
   const revealElements = document.querySelectorAll(
     'section:not(.section-avis-carousel), .hero-content, article:not(.carousel-card), details, .cta-banner'
@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach((el) => revealObserver.observe(el));
 
 
-/* --------------------------------------------------------------------------
-     2. Carrousel Avis Clients : Glisse fluide native + boucle infinie
+  /* --------------------------------------------------------------------------
+     2. Carrousel Avis Clients : Centrage parfait + Boucle fluide
      -------------------------------------------------------------------------- */
   const track = document.getElementById('testimonialTrack');
   const prevBtn = document.getElementById('prevBtn');
@@ -34,13 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (track && prevBtn && nextBtn) {
     let isMoving = false;
 
-    // Centrage initial de la 2e carte dès le chargement
-    const initialCard = track.querySelectorAll('.carousel-card')[1];
-    if (initialCard) {
-      setTimeout(() => {
-        initialCard.scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
-      }, 50);
-    }
+    // Caler immédiatement la première carte au centre sans animation au chargement
+    const alignFirstCard = () => {
+      const firstCard = track.querySelector('.carousel-card');
+      if (firstCard) {
+        firstCard.scrollIntoView({ behavior: 'instant', inline: 'center', block: 'nearest' });
+      }
+    };
+
+    window.addEventListener('load', alignFirstCard);
+    setTimeout(alignFirstCard, 80);
 
     // Défilement vers la droite (→)
     nextBtn.addEventListener('click', (e) => {
@@ -49,23 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const cards = track.querySelectorAll('.carousel-card');
       const firstCard = cards[0];
-      const targetCard = cards[2] || cards[1]; // Vise la carte suivante pour la centrer
+      const targetCard = cards[1];
 
       if (!firstCard || !targetCard) return;
       isMoving = true;
 
-      // Déplacement matériel ultra-fluide
       targetCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
-      // Replace la carte passée à l'autre bout sans saccade
       setTimeout(() => {
         const offsetBefore = track.scrollLeft;
-        const cardWidth = firstCard.offsetWidth + 32;
+        const cardWidth = firstCard.offsetWidth + 28;
 
         track.appendChild(firstCard);
         track.scrollLeft = offsetBefore - cardWidth;
         isMoving = false;
-      }, 500);
+      }, 480);
     });
 
     // Défilement vers la gauche (←)
@@ -75,20 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const cards = track.querySelectorAll('.carousel-card');
       const lastCard = cards[cards.length - 1];
-      const targetCard = cards[0];
 
-      if (!lastCard || !targetCard) return;
+      if (!lastCard) return;
       isMoving = true;
 
-      const cardWidth = lastCard.offsetWidth + 32;
+      const cardWidth = lastCard.offsetWidth + 28;
       track.insertBefore(lastCard, track.firstChild);
       track.scrollLeft += cardWidth;
 
-      // Glisse vers l'arrière
       lastCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
       setTimeout(() => {
         isMoving = false;
-      }, 500);
+      }, 480);
     });
   }
+
+});
