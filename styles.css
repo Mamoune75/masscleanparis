@@ -373,7 +373,7 @@ p { margin: 0; }
 .hero-title {
   color: #FFFFFF;
   font-size: clamp(2.3rem, 4.2vw, 3.8rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.03em;
   margin: 0;
