@@ -582,10 +582,11 @@ p { margin: 0; }
   margin-bottom: 12px;
 }
 .stat-card span { font-size: 1rem; color: #D5F7F3; }
+
 /* ---------- Carrousel Avis Clients Framer ---------- */
 
 .section-avis-carousel {
-  padding: 90px 0;
+  padding: 100px 0 80px;
   background: #EAF8F6;
   overflow: hidden;
 }
@@ -597,34 +598,35 @@ p { margin: 0; }
   color: #0E1B1A;
 }
 
-/* Piste horizontale avec snap fluide */
+/* Piste avec défilement centré */
 .carousel-track {
   display: flex;
-  gap: 28px;
+  gap: 32px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 40px 10vw;
-  scrollbar-width: none; /* Masque la barre sous Firefox */
+  padding: 40px calc(50vw - 360px); /* Centre la carte active de 720px */
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
 .carousel-track::-webkit-scrollbar {
-  display: none; /* Masque la barre sous Chrome/Safari */
+  display: none;
 }
 
-/* Carte grand format Framer */
+/* Carte principale */
 .carousel-card {
-  flex: 0 0 clamp(320px, 68vw, 760px);
+  flex: 0 0 720px;
+  max-width: 85vw;
   scroll-snap-align: center;
   background: #068F8A;
   color: #FFFFFF;
   border-radius: 28px;
-  padding: 44px 48px;
+  padding: 48px;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 32px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
   align-items: center;
-  box-shadow: 0 16px 36px rgba(4, 82, 79, 0.16);
+  box-shadow: 0 16px 36px rgba(4, 82, 79, 0.12);
   box-sizing: border-box;
 }
 
@@ -632,16 +634,18 @@ p { margin: 0; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  min-height: 220px;
+  min-height: 200px;
 }
 
 .card-quote {
-  font-size: clamp(1rem, 1.25vw, 1.15rem);
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.65;
   color: #E6FAF7;
 }
 
+.card-author {
+  margin-top: 24px;
+}
 .card-author strong {
   display: block;
   font-size: 0.95rem;
@@ -654,7 +658,6 @@ p { margin: 0; }
   margin-top: 2px;
 }
 
-/* Logo client à droite */
 .card-logo-col {
   display: flex;
   align-items: center;
@@ -668,19 +671,19 @@ p { margin: 0; }
 }
 
 .client-brand-text {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: #FFFFFF;
   text-align: center;
 }
 
-/* Boutons flèches */
+/* Flèches de défilement */
 .carousel-controls {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .carousel-btn {
@@ -706,14 +709,15 @@ p { margin: 0; }
   transform: scale(0.95);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+  .carousel-track {
+    padding: 30px 20px;
+  }
   .carousel-card {
+    flex: 0 0 85vw;
     grid-template-columns: 1fr;
     padding: 32px 24px;
     gap: 24px;
-  }
-  .carousel-track {
-    padding: 30px 20px;
   }
   .card-logo-col {
     min-height: 110px;
