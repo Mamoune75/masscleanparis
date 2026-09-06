@@ -317,31 +317,106 @@ p { margin: 0; }
 .hero-subtitle { font-size: 1.25rem; color: var(--ink-soft); margin-bottom: 34px; }
 .hero-actions { display: flex; justify-content: center; }
 
-/* ---------- Section À Propos Intro ---------- */
+/* ---------- Section À Propos Intro (Alignement Framer) ---------- */
 
-.section-about-intro { padding: 90px 0; }
-.about-grid {
+.section-about-intro {
+  padding: 100px 0;
+  background: #FFFFFF;
+}
+
+.about-split-layout {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
 }
-@media (max-width: 920px) {
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-}
-.about-right { display: grid; gap: 20px; }
-.info-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 30px;
+
+.about-left-col {
   display: flex;
-  gap: 18px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
-.card-icon { color: var(--teal-900); font-size: 1.2rem; flex-shrink: 0; }
-.info-card p { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.6; }
-.info-card strong { color: var(--teal-950); }
+
+.about-main-heading {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #0E1B1A;
+  margin: 0 0 36px 0;
+}
+
+.about-btn-wrap {
+  margin-top: auto;
+}
+
+/* Bouton vert menthe avec flèche foncée */
+.btn-pill--teal {
+  background: #B6FFF2;
+  color: #054844;
+  border: none;
+  padding: 6px 6px 6px 24px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.btn-pill--teal:hover {
+  background: #A0FCEB;
+}
+.btn-pill--teal .btn-pill-arrow {
+  background: #04524F;
+  color: #FFFFFF;
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
+}
+
+/* Colonne de droite : Cartes empilées verticalement */
+.about-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-card {
+  background: #EAF8F6;
+  border: 1px solid #DCF2EE;
+  border-radius: 20px;
+  padding: 32px 34px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.about-card-sparkle {
+  color: #6C8E8B;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex-shrink: 0;
+}
+
+.about-card p {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: #2F4D4B;
+  margin: 0;
+}
+
+.about-card strong {
+  color: #04524F;
+  font-weight: 700;
+}
+
+/* Adaptation responsive pour smartphones et tablettes */
+@media (max-width: 960px) {
+  .about-split-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .about-card {
+    padding: 24px 26px;
+  }
+}
 
 /* ---------- Solutions Framer Cards ---------- */
 
