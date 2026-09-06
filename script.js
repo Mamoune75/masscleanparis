@@ -1,21 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Cible automatiquement toutes les cartes et sections principales
-  const targets = document.querySelectorAll(
-    '.framer-plan-card, .about-card, .testimonial-card, .stat-card, .faq-box, .section-head, .cta-banner'
+  const elements = document.querySelectorAll(
+    'section, .hero-content, article, [class*="card"], details, .cta-banner'
   );
 
-  targets.forEach(el => el.classList.add('reveal'));
+  elements.forEach((el) => {
+    el.classList.add('reveal');
+  });
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        obs.unobserve(entry.target); // L'effet ne se joue qu'une fois
+        observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.12 // Se déclenche dès que 12 % de l'élément entre dans l'écran
+    threshold: 0.05, // Se déclenche dès l'apparition des premiers pixels
+    rootMargin: '0px 0px -50px 0px'
   });
 
-  targets.forEach(el => observer.observe(el));
+  elements.forEach((el) => observer.observe(el));
 });
