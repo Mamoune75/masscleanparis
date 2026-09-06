@@ -602,11 +602,11 @@ p { margin: 0; }
 .carousel-track {
   display: flex;
   gap: 32px;
-  overflow-x: hidden; /* Empêche les barres et conflits de scroll */
-  padding: 40px 0;
-  cursor: grab;
-  user-select: none;
-}
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 40px calc(50vw - 360px);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 .carousel-track::-webkit-scrollbar {
   display: none;
