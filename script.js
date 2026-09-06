@@ -1,5 +1,33 @@
-/* --------------------------------------------------------------------------
-     2. Carrousel Infini Réel (La 1ère carte repasse à la fin sans rembobiner)
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* --------------------------------------------------------------------------
+     1. Animation d'apparition au défilement (Scroll Reveal prononcé)
+     -------------------------------------------------------------------------- */
+  const elements = document.querySelectorAll(
+    'section, .hero-content, article, details, .cta-banner'
+  );
+
+  elements.forEach((el) => {
+    el.classList.add('reveal');
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.05,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  elements.forEach((el) => observer.observe(el));
+
+
+  /* --------------------------------------------------------------------------
+     2. Carrousel Avis Clients : Défilement infini réel (Seamless loop)
      -------------------------------------------------------------------------- */
   const track = document.getElementById('testimonialTrack');
   const prevBtn = document.getElementById('prevBtn');
@@ -16,15 +44,15 @@
       const firstCard = track.querySelector('.carousel-card');
       if (!firstCard) return;
 
-      const cardWidth = firstCard.offsetWidth + 32; // largeur + écart (gap)
+      const cardWidth = firstCard.offsetWidth + 32; // Largeur carte + espacement
       isMoving = true;
 
       track.scrollBy({ left: cardWidth, behavior: 'smooth' });
 
-      // Une fois l'animation de glisse terminée, on déplace l'élément dans le DOM
+      // Une fois la glisse achevée, on injecte la première carte tout au bout
       setTimeout(() => {
-        track.appendChild(firstCard); // La première carte passe à la toute fin
-        track.scrollLeft -= cardWidth; // Réajuste instantanément la position pour que ce soit invisible à l'œil
+        track.appendChild(firstCard);
+        track.scrollLeft -= cardWidth; // Réajuste sans saccade
         isMoving = false;
       }, 450);
     });
@@ -41,11 +69,11 @@
       const cardWidth = lastCard.offsetWidth + 32;
       isMoving = true;
 
-      // On insère discrètement la dernière carte tout devant
+      // Déplace la dernière carte tout devant
       track.insertBefore(lastCard, track.firstChild);
-      track.scrollLeft += cardWidth; // Compense immédiatement la position
+      track.scrollLeft += cardWidth;
 
-      // Puis on anime le glissement vers la gauche
+      // Anime le glissement vers la gauche
       track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
 
       setTimeout(() => {
@@ -53,3 +81,5 @@
       }, 450);
     });
   }
+
+});
