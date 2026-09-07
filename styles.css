@@ -103,7 +103,7 @@ p { margin: 0; }
 .btn:active { transform: scale(0.98); }
 
 .btn-pill {
-  background: #07BEB8;
+  background: #C4FFF9;
   color: var(--teal-950);
   padding: 6px 6px 6px 20px;
   border-radius: 999px;
