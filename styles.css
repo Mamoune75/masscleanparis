@@ -103,13 +103,13 @@ p { margin: 0; }
 .btn:active { transform: scale(0.98); }
 
 .btn-pill {
-  background: #E6FAF7;
+  background: #07BEB8;
   color: var(--teal-950);
   padding: 6px 6px 6px 20px;
   border-radius: 999px;
   border: 1px solid var(--line);
 }
-.btn-pill:hover { background: #D5F6F1; }
+.btn-pill:hover { background: #07BEB8; }
 
 .btn-pill-arrow {
   display: inline-flex;
