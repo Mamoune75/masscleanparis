@@ -76,7 +76,7 @@ p { margin: 0; }
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--teal-900);
+  color: #058F8A;
   background: #C4FFF9;
   border: 1px solid var(--line);
   border-radius: 999px;
