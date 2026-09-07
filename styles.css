@@ -506,14 +506,28 @@ p { margin: 0; }
   border-radius: 24px;
   padding: 34px;
   display: flex;
+  flex-direction: column;        
+  justify-content: space-between;
   box-sizing: border-box;
   aspect-ratio: 1 / 1;  
+}
+
+.about-card-badge {
+  background: #FFFFFF;
+  color: #0E1B1A;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  align-self: flex-start; 
 }
 
 .about-card:first-child {
   background: #B6FFF2;
   border: none;
-  align-items: flex-start;
 }
 .about-card:first-child p {
   color: #054844;
