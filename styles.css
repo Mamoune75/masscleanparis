@@ -397,7 +397,7 @@ p { margin: 0; }
 }
 
 .btn-pill--hero {
-  background: #068F8A;
+  background: #07BEB8;
   color: #FFFFFF;
   padding: 12px 16px 12px 24px;
   border-radius: 999px;
@@ -410,7 +410,7 @@ p { margin: 0; }
   transition: transform 0.15s ease, background 0.15s ease;
 }
 .btn-pill--hero:hover {
-  background: #07BEB8;
+  background: #068F8A;
   transform: translateY(-2px);
 }
 
