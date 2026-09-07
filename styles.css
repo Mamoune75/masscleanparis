@@ -514,15 +514,23 @@ p { margin: 0; }
 
 .about-card-badge {
   background: #FFFFFF;
-  color: #0E1B1A;
-  padding: 10px 18px;
-  font-size: 0.85rem;
+  color: #04524F;             
+  padding: 14px 28px;         
+  font-size: 0.9rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 8px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  align-self: flex-center; 
+  letter-spacing: 0.08em;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  
+  /* Verrouille l'alignement et empêche l'étirement */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;          
+  width: fit-content;          
+  white-space: nowrap;        
 }
 
 .about-card:first-child {
