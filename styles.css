@@ -522,7 +522,7 @@ p { margin: 0; }
   letter-spacing: 0.05em;
   border-radius: 8px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  align-self: flex-start; 
+  align-self: flex-center; 
 }
 
 .about-card:first-child {
