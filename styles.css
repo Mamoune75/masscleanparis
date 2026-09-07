@@ -109,7 +109,9 @@ p { margin: 0; }
   border-radius: 999px;
   border: 1px solid var(--line);
 }
-.btn-pill:hover { background: #07BEB8; }
+.btn-pill:hover { background: #07BEB8; 
+  transform: translateY(-2px);
+}
 
 .btn-pill-arrow {
   display: inline-flex;
