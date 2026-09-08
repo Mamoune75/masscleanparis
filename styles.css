@@ -898,7 +898,7 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
   transition: transform 0.2s ease;
 }
 .faq-box[open] summary::after { transform: rotate(45deg); }
-.faq-content { padding: 0 26px 24px; color: var(--ink-soft); font-size: 0.98rem; line-height: 1.6; }
+.faq-content { padding: 0 26px 24px; color: var(--ink-soft); font-size: 0.98rem; line-height: 1.6; text-align: left;}
 
 /* ---------- CTA Banner Framer ---------- */
 
