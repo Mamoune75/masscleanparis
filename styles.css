@@ -871,7 +871,7 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
 
 /* ---------- FAQ Framer Style ---------- */
 
-.section-faq { padding: 90px 0; background: var(--mint-bg); }
+.section-faq { padding: 90px 0; background: var(--mint-bg); text-align: center;}
 .faq-accordion { display: grid; gap: 14px; max-width: 860px; margin: 0 auto; }
 .faq-box {
   background: var(--white);
