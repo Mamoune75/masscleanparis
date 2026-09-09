@@ -70,16 +70,5 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
-
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const el = document.querySelector(a.getAttribute('href'));
-    if (!el) return;
-    e.preventDefault();
-    const offset = 80; // Hauteur de ta navbar à déduire
-    const y = el.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  });
-});
   
 });
