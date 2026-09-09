@@ -1027,5 +1027,5 @@ form.card {
 }
 
 #solutions {
-  scroll-margin-top: 120px; /* Décale l'arrêt sous la navbar */
+  scroll-margin-top: 180px; /* Augmenté pour dégager largement le badge */
 }
