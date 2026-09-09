@@ -747,7 +747,11 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
   text-align: center;
 }
 
-/* ---------- Carrousel Avis Clients Framer ---------- */
+/* ---------- Carrousel Avis Clients Framer ---------- *
+
+#avis {
+  scroll-margin-top: 140px; 
+}
 
 .section-avis-carousel {
   padding: 90px 0 80px;
