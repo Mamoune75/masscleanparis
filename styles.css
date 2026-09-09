@@ -1026,6 +1026,3 @@ form.card {
   transform: translateY(0) scale(1);
 }
 
-#solutions {
-  scroll-margin-top: 180px; /* Augmenté pour dégager largement le badge */
-}
