@@ -750,7 +750,7 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
 /* ---------- Carrousel Avis Clients Framer ---------- */
 
 #carousel {
-  scroll-margin-top: 140px; 
+  scroll-margin-top: 240px; 
 }
 
 .section-avis-carousel {
