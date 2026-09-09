@@ -580,6 +580,7 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
 
 #solutions {
   scroll-margin-top: 230px; 
+  }
 
 .section-solutions {
   padding: 100px 0;
