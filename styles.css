@@ -1025,3 +1025,7 @@ form.card {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+
+#solutions {
+  scroll-margin-top: 120px; /* Décale l'arrêt sous la navbar */
+}
