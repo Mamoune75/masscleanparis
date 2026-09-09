@@ -71,43 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const targetId = this.getAttribute('href');
-    if (targetId === '#' || targetId === '') return;
-
-    const targetElement = document.querySelector(targetId);
-    if (!targetElement) return;
-
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const el = document.querySelector(a.getAttribute('href'));
+    if (!el) return;
     e.preventDefault();
-
-    const startPosition = window.pageYOffset;
-    // Décalage de 80px si tu as une navbar fixe qui recouvre le contenu
-    const navOffset = 80; 
-    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 1000; // Durée du défilement en ms (1000ms = 1 seconde)
-    let startTime = null;
-
-    // Courbe d'accélération puis de décélération fluide (ease-in-out)
-    const easeInOutCubic = (t) => {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    };
-
-    const animation = (currentTime) => {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1);
-      const ease = easeInOutCubic(progress);
-
-      window.scrollTo(0, startPosition + distance * ease);
-
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animation);
-      }
-    };
-
-    requestAnimationFrame(animation);
+    const offset = 80; // Hauteur de ta navbar à déduire
+    const y = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
   });
 });
   
