@@ -749,6 +749,7 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
   padding: 90px 0 80px;
   background: #EAF8F6;
   overflow: hidden;
+  text-align: center;
 }
 
 .carousel-heading {
@@ -756,7 +757,6 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: #0E1B1A;
-  text-align: center;
 }
 
 .carousel-track {
