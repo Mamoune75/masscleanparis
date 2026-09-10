@@ -993,53 +993,76 @@ form.card {
   outline-offset: 1px;
 }
 
-/* Conteneur des choix */
+/* Conteneur général des boutons radio */
 .radio-group {
-  display: flex;
-  gap: 12px;
-  margin-top: 8px;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 16px;
+  margin-top: 10px;
+  width: 100%;
 }
 
-.radio-group {
+/* Le groupe du haut (Particulier / Professionnel) : 2 grandes colonnes égales */
+.field:first-of-type .radio-group {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Le groupe du bas (Ponctuel / Mensuel / Trimestriel) : 3 colonnes réparties sur toute la largeur */
+.field:nth-of-type(4) .radio-group {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Style commun des pilules */
+.radio-pill {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 8px;
-  flex-wrap: wrap;
-}
-
-.radio-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
   background: var(--mint-bg, #EAF8F6);
   border: 1px solid var(--line, #DCF2EE);
   border-radius: 999px;
-  font-size: 0.9rem;
   font-weight: 600;
   color: #0E1B1A;
   cursor: pointer;
-  line-height: 1;
+  user-select: none;
+  transition: all 0.2s ease;
 }
 
-/* On force le petit input radio à garder une taille discrète et alignée */
+/* On grossit spécifiquement les 2 boutons du haut (plus hauts et texte plus grand) */
+.field:first-of-type .radio-pill {
+  padding: 14px 20px;
+  font-size: 1rem;
+}
+
+/* Boutons du bas (hauteur standard, bien répartis) */
+.field:nth-of-type(4) .radio-pill {
+  padding: 11px 16px;
+  font-size: 0.92rem;
+}
+
+/* Puce radio native stylisée */
 .radio-pill input[type="radio"] {
-  appearance: auto; /* Rétablit la taille native compacte */
+  appearance: auto;
   -webkit-appearance: auto;
   margin: 0;
-  width: 15px;
-  height: 15px;
-  accent-color: #068F8A; /* Coloration automatique en vert teal au clic */
+  width: 16px;
+  height: 16px;
+  accent-color: #068F8A;
   cursor: pointer;
 }
 
-/* Style de la pilule active */
+/* État coché */
 .radio-pill:has(input[type="radio"]:checked) {
   background: #FFFFFF;
   border-color: #068F8A;
-  box-shadow: 0 2px 6px rgba(6, 143, 138, 0.1);
+  box-shadow: 0 2px 8px rgba(6, 143, 138, 0.12);
+}
+
+/* Adaptation sur petits écrans de mobile */
+@media (max-width: 520px) {
+  .field:first-of-type .radio-group,
+  .field:nth-of-type(4) .radio-group {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Footer Framer ---------- */
