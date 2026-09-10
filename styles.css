@@ -1001,57 +1001,44 @@ form.card {
   flex-wrap: wrap;
 }
 
-/* Le bouton cliquable */
+.radio-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
 .radio-pill {
-  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 18px;
+  padding: 8px 16px;
   background: var(--mint-bg, #EAF8F6);
   border: 1px solid var(--line, #DCF2EE);
-  border-radius: 999px; /* Forme pilule */
-  font-size: 0.92rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--teal-950, #0E1B1A);
+  color: #0E1B1A;
   cursor: pointer;
-  user-select: none;
-  transition: all 0.2s ease;
+  line-height: 1;
 }
 
-/* On masque le petit rond natif sans casser l'accessibilité */
+/* On force le petit input radio à garder une taille discrète et alignée */
 .radio-pill input[type="radio"] {
-  appearance: none;
-  -webkit-appearance: none;
+  appearance: auto; /* Rétablit la taille native compacte */
+  -webkit-appearance: auto;
   margin: 0;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #068F8A;
-  border-radius: 50%;
-  display: grid;
-  place-content: center;
+  width: 15px;
+  height: 15px;
+  accent-color: #068F8A; /* Coloration automatique en vert teal au clic */
   cursor: pointer;
 }
 
-.radio-pill input[type="radio"]::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em #068F8A;
-}
-
-.radio-pill input[type="radio"]:checked::before {
-  transform: scale(1);
-}
-
-/* Style de la pilule quand l'option est sélectionnée */
+/* Style de la pilule active */
 .radio-pill:has(input[type="radio"]:checked) {
   background: #FFFFFF;
   border-color: #068F8A;
-  box-shadow: 0 2px 8px rgba(6, 143, 138, 0.12);
+  box-shadow: 0 2px 6px rgba(6, 143, 138, 0.1);
 }
 
 /* ---------- Footer Framer ---------- */
