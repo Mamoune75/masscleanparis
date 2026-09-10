@@ -928,6 +928,9 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
 
 /* ---------- Contact page ---------- */
 
+.section-contact {
+  background-color: var(--mint-bg, #EAF8F6);
+}
 
 .contact-header {
   text-align: center;
