@@ -949,7 +949,7 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
 
 .contact-info { display: grid; gap: 18px; align-content: start; }
 .info-card {
-  background: var(--mint-bg);
+  background: #FFFFFF;
   border-radius: var(--radius-sm);
   padding: 20px 22px;
 }
