@@ -1093,6 +1093,22 @@ form.card {
   transform: scale(0.99);
 }
 
+/* Uniquement sur la page contact, sur écran d'ordinateur */
+@media (min-width: 901px) {
+  .page-contact .site-header .wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .page-contact .site-header nav {
+    margin-left: auto; /* Pousse le menu tout à droite */
+  }
+
+  .page-contact .nav-cta {
+    display: none; /* Cache le conteneur vide */
+  }
+}
+
 /* ---------- Footer Framer ---------- */
 
 .site-footer {
