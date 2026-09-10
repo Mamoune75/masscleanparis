@@ -1066,6 +1066,32 @@ form.card {
   }
 }
 
+/* Bouton d'envoi pleine largeur */
+.btn-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
+  background-color: var(--teal-950, #0E1B1A);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-block:hover {
+  opacity: 0.9;
+}
+
+.btn-block:active {
+  transform: scale(0.99);
+}
+
 /* ---------- Footer Framer ---------- */
 
 .site-footer {
