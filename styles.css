@@ -963,7 +963,7 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
   padding: 9px 16px;
   font-size: 0.85rem;
 }
-.social-row a:hover { border-color: var(--teal-700); color: var(--teal-950); }
+.social-row a:hover { border-color: var(--teal-700); color: #FFFFFF; }
 
 form.card {
   background: #FFFFFF;
