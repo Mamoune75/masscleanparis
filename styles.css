@@ -1015,6 +1015,7 @@ form.card {
 .radio-pill {
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   gap: 10px;
   background: var(--mint-bg, #EAF8F6);
