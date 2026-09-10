@@ -171,6 +171,18 @@ p { margin: 0; }
   justify-content: space-between;
   height: 84px;
 }
+
+/* Sur grand écran : on masque le bloc CTA devenu inutile et on pousse le menu à droite */
+@media (min-width: 901px) {
+  .nav-cta {
+    display: none;
+  }
+  
+  .site-header nav {
+    margin-left: auto;
+  }
+}
+
 .brand {
   display: flex;
   align-items: center;
