@@ -70,5 +70,47 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // Animation de compteur au défilement
+const counters = document.querySelectorAll('.counter');
+const speed = 1500; // Durée totale du défilement en millisecondes (1,5 seconde)
+
+const animateCounter = (counter) => {
+  const target = +counter.getAttribute('data-target');
+  const suffix = counter.getAttribute('data-suffix') || '';
+  const startTime = performance.now();
+
+  const update = (currentTime) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / speed, 1);
+    
+    // Effet d'amorti fluide vers la fin (easeOutQuad)
+    const easedProgress = 1 - (1 - progress) * (1 - progress);
+    const currentValue = Math.floor(easedProgress * target);
+
+    // Formatage avec espace pour les milliers (ex: 2 000)
+    counter.textContent = currentValue.toLocaleString('fr-FR') + suffix;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      counter.textContent = target.toLocaleString('fr-FR') + suffix;
+    }
+  };
+
+  requestAnimationFrame(update);
+};
+
+// Déclenchement automatique dès que la section entre dans l'écran
+const counterObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      observer.unobserve(entry.target); // Ne s'anime qu'une seule fois
+    }
+  });
+}, { threshold: 0.4 });
+
+counters.forEach(counter => counterObserver.observe(counter));
   
 });
