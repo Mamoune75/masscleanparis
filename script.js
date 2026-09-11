@@ -24,52 +24,53 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach((el) => observer.observe(el));
 
 
-  /* --------------------------------------------------------------------------
-     2. Contrôles du Carrousel Avis Clients (Flèches + Centrage initial)
-     -------------------------------------------------------------------------- */
-  const track = document.getElementById('testimonialTrack');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
+const track = document.getElementById('testimonialTrack');
+const nextBtn = document.querySelector('.carousel-btn:last-child');
+const prevBtn = document.querySelector('.carousel-btn:first-child');
 
-  if (track) {
-    const cards = track.querySelectorAll('.carousel-card');
+if (track) {
+  // 1. Cloner les cartes originales pour créer la boucle infinie
+  const originalCards = Array.from(track.children);
+  
+  // Clone à la fin
+  originalCards.forEach(card => {
+    track.appendChild(card.cloneNode(true));
+  });
 
-    // Fonction pour centrer une carte donnée au milieu de l'écran
-    const centerCard = (card, behavior = 'smooth') => {
-      if (!card) return;
-      const trackCenter = track.offsetWidth / 2;
-      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-      track.scrollTo({
-        left: cardCenter - trackCenter,
-        behavior: behavior
-      });
-    };
+  // Calcul du décalage (largeur d'une carte + écart)
+  const getCardStep = () => {
+    const card = track.querySelector('.carousel-card');
+    return card ? card.offsetWidth + 28 : 608;
+  };
 
-    // Centre automatiquement la 2e carte (Mohamed / TASTY) dès l'ouverture
-    if (cards.length > 1) {
-      setTimeout(() => {
-        centerCard(cards[1], 'instant');
-      }, 50);
+  // 2. Gestion du défilement avec réinitialisation invisible
+  track.addEventListener('scroll', () => {
+    const maxScroll = track.scrollWidth / 2;
+
+    // Si on arrive au bout de la première série (sur les cartes clonées),
+    // on remet discrètement le scroll au début
+    if (track.scrollLeft >= maxScroll) {
+      track.scrollLeft -= maxScroll;
+    } 
+    // Si on défile en arrière au tout début
+    else if (track.scrollLeft <= 0) {
+      track.scrollLeft += maxScroll;
     }
+  });
 
-    // Navigation avec les flèches
-    if (prevBtn && nextBtn) {
-      const getScrollStep = () => {
-        const firstCard = cards[0];
-        return firstCard ? firstCard.offsetWidth + 32 : 500;
-      };
-
-      prevBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-      });
-
-      nextBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-      });
-    }
+  // 3. Boutons Suivant / Précédent
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: getCardStep(), behavior: 'smooth' });
+    });
   }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -getCardStep(), behavior: 'smooth' });
+    });
+  }
+}
 
   // Animation de compteur au défilement
 const counters = document.querySelectorAll('.counter');
