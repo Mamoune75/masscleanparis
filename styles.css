@@ -828,12 +828,19 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px dashed rgba(255, 255, 255, 0.22);
   border-radius: 18px;
-  padding: 24px 16px;
   height: 100%;
   min-height: 140px;
+  overflow: hidden; 
+  padding: 0;       
+  border: none;     
+}
+
+.client-brand-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
 }
 
 .client-brand-text {
