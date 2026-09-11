@@ -879,6 +879,21 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
   }
 }
 
+.card-logo-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-brand-img {
+  max-width: 80%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
 /* ---------- FAQ Framer Style ---------- */
 
 .section-faq { padding: 90px 0; background: var(--mint-bg); text-align: center;}
