@@ -581,7 +581,7 @@ font-size: clamp(1.15rem, 1.45vw, 1.35rem);
 /* ---------- Section Solutions (Framer Exact Match) ---------- */
 
 #solutions {
-  scroll-margin-top: 230px; 
+  scroll-margin-top: 0px; 
   }
 
 .section-solutions {
