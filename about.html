@@ -88,27 +88,98 @@
     </div>
   </section>
 
-  <section>
+<!-- Avis Clients — Carrousel Framer -->
+  <section id="avis" class="section-avis-carousel">
     <div class="wrap">
       <div class="section-head center">
-        <p class="kicker" style="margin-left:auto;margin-right:auto;">Avis clients</p>
-        <h2>Ce que pensent nos clients</h2>
-        <p class="lede" style="margin: 16px auto 0; text-align:center;">Votre satisfaction est notre vitrine la plus transparente qui soit.</p>
+        <h2 class="carousel-heading">Ce que pensent nos clients</h2>
+        <p class="lede">Votre satisfaction est notre vitrine la plus transparente qui soit.</p>
       </div>
-      <div class="testimonial-row">
-        <div class="testimonial">
-          <p>Les vitres de nos bureaux sont impeccables, sans la moindre trace. L'intervention a été rapide, discrète et très professionnelle.</p>
-          <footer><span class="avatar">R</span><div><b>Rizwan</b><span>Directeur, BRISNFIX</span></div></footer>
+    </div>
+
+    <!-- Piste de défilement horizontal -->
+    <div class="carousel-track" id="testimonialTrack">
+      
+      <!-- Carte 1 -->
+      <article class="carousel-card">
+        <div class="card-quote-col">
+          <p class="card-quote">« Les vitres de nos bureaux sont impeccables, sans la moindre trace. L'intervention a été rapide, discrète et très professionnelle. Je recommande sans hésiter merci encore. »</p>
+          <div class="card-author">
+            <strong>Rizwan</strong>
+            <span>Directeur, BRISNFIX</span>
+          </div>
         </div>
-        <div class="testimonial">
-          <p>Mass Clean s'occupe de nos vitres plusieurs fois par an. Interventions rapides, résultat impeccable à chaque passage.</p>
-          <footer><span class="avatar">M</span><div><b>Mohamed</b><span>Responsable, TASTY</span></div></footer>
+        <div class="card-logo-col">
+          <img src="images/brisenfix.png" alt="Logo Brise N'Fix" class="client-brand-img">
         </div>
-        <div class="testimonial">
-          <p>Une excellente prestation que je recommande vivement, le travail est absolument impeccable. Courtois et très sérieux.</p>
-          <footer><span class="avatar">K</span><div><b>Kefann</b><span>Directeur, KNZ Conduite</span></div></footer>
+      </article>
+
+      <!-- Carte 2 -->
+      <article class="carousel-card">
+        <div class="card-quote-col">
+          <p class="card-quote">« Mass Clean s'occupe de nos vitres plusieurs fois par an. Interventions rapides, résultat impeccable à chaque passage. Équipe au top. »</p>
+          <div class="card-author">
+            <strong>Mohamed</strong>
+            <span>Responsable, TASTY</span>
+          </div>
         </div>
-      </div>
+        <div class="card-logo-col">
+          <img src="images/tastyc.jpg" alt="Logo Tasty" class="client-brand-img">
+
+        </div>
+      </article>
+
+      <!-- Carte 3 -->
+      <article class="carousel-card">
+        <div class="card-quote-col">
+          <p class="card-quote">« Une excellente prestation que je recommande vivement, le travail est absolument impeccable. Courtois, souriant et très méticuleux. »</p>
+          <div class="card-author">
+            <strong>Kefann</strong>
+            <span>Directeur, KNZ Conduite</span>
+          </div>
+        </div>
+        <div class="card-logo-col">
+          <img src="images/knzauto.png" alt="Logo KNZ Auto" class="client-brand-img">
+
+        </div>
+      </article>
+
+      <!-- Carte 4 -->
+      <article class="carousel-card">
+        <div class="card-quote-col">
+          <p class="card-quote">« Mass intervient tous les trois mois pour le nettoyage complet de notre atelier et showroom. Toujours ponctuel et résultat clinique. »</p>
+          <div class="card-author">
+            <strong>Oussama</strong>
+            <span>Directeur, C Factory</span>
+          </div>
+        </div>
+        <div class="card-logo-col">
+          <img src="images/cfactorcy.jpeg" alt="Logo C Factory" class="client-brand-img">
+
+        </div>
+      </article>
+
+      <!-- Carte 5 -->
+      <article class="carousel-card">
+        <div class="card-quote-col">
+          <p class="card-quote">« Intervention impeccable chaque mois dans notre salle de restaurant. Le travail est rapide, silencieux et respecte nos installations. »</p>
+          <div class="card-author">
+            <strong>Khalil</strong>
+            <span>Directeur, Restaurant NOOMY</span>
+          </div>
+        </div>
+        <div class="card-logo-col">
+          <img src="images/noomy.jpeg" alt="Logo Noomy" class="client-brand-img">
+
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Flèches de défilement centrées -->
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn" aria-label="Avis précédent">←</button>
+      <button class="carousel-btn" id="nextBtn" aria-label="Avis suivant">→</button>
     </div>
   </section>
 
