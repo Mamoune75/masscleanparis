@@ -1177,3 +1177,19 @@ form.card {
   transform: translateY(0) scale(1);
 }
 
+/* Règles appliquées UNIQUEMENT à la page À Propos */
+
+.page-about .hero .wrap,
+.page-about .section-head {
+  text-align: center;
+}
+
+.page-about .hero h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-about .section-alt {
+  padding-top: 100px;
+  padding-bottom: 90px;
+}
