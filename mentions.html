@@ -10,55 +10,79 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="section wrap" style="max-width: 800px; margin: 50px auto; padding: 0 20px; line-height: 1.7; color: #333;">
-    <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 24px; color: #111;">Mentions légales</h1>
 
-    <h2 style="font-size: 1.3rem; margin-top: 28px; margin-bottom: 12px; color: #111;">1. Éditeur du site</h2>
-    <p>
-      Le site internet accessible à l'adresse <strong>masscleanparis.fr</strong> est édité par la société <strong>MASS CLEAN PARIS</strong>.<br>
-      <strong>Forme juridique :</strong> Société par actions simplifiée unipersonnelle (SASU)<br>
-      <strong>Siège social :</strong> 16 Avenue de l'Industrie, 94200 Ivry-sur-Seine<br>
-      <strong>Numéro SIRET :</strong> 106 389 042 00016<br>
-      <strong>RCS :</strong> Immatriculée au Registre du commerce et des sociétés de Créteil<br>
-      <strong>Régime fiscal :</strong> Assujettie à la TVA (Régime réel simplifié d'imposition — RSI)<br>
-      <strong>Directeur de la publication :</strong> Mamoune GHOUL<br>
-      <strong>Téléphone :</strong> 06 59 57 12 48<br>
-      <strong>E-mail :</strong> masscleanparis@gmail.com
-    </p>
-
-    <h2 style="font-size: 1.3rem; margin-top: 28px; margin-bottom: 12px; color: #111;">2. Assurance professionnelle</h2>
-    <p>
-      L'activité professionnelle de la société MASS CLEAN PARIS est couverte par un contrat d'assurance responsabilité civile professionnelle (RC Pro) souscrit auprès de la compagnie <strong>Insify</strong>, garantissant les dommages corporels, matériels et immatériels causés dans le cadre de ses interventions en Île-de-France.
-    </p>
-
-    <h2 style="font-size: 1.3rem; margin-top: 28px; margin-bottom: 12px; color: #111;">3. Dispositif de crédit d'impôt (Services à la personne)</h2>
-    <p>
-      Pour les prestations destinées aux clients particuliers éligibles au crédit d'impôt (avance immédiate de 50 %), la facturation et la gestion administrative sont réalisées en partenariat avec la coopérative de services à la personne déclarée <strong>Unipros</strong>.
-    </p>
-
-    <h2 style="font-size: 1.3rem; margin-top: 28px; margin-bottom: 12px; color: #111;">4. Hébergement</h2>
-    <p>
-      Le site est hébergé par :<br>
-      <strong>Vercel Inc.</strong><br>
-      440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br>
-      Site web : <a href="https://vercel.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">vercel.com</a>
-    </p>
-
-    <h2 style="font-size: 1.3rem; margin-top: 28px; margin-bottom: 12px; color: #111;">5. Protection des données personnelles (RGPD)</h2>
-    <p>
-      Les informations recueillies via les formulaires du site (nom, prénom, e-mail, téléphone, commune, détails du projet) font l'objet d'un traitement informatique destiné exclusivement à la société MASS CLEAN PARIS pour l'établissement des devis et le suivi de la relation commerciale.<br>
-      L'acheminement sécurisé des messages est opéré par le service tiers <strong>Web3Forms</strong>.<br>
-      Conformément aux dispositions du Règlement général sur la protection des données (RGPD) et de la loi « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification et d'effacement de vos données personnelles en adressant votre demande à : <strong>masscleanparis@gmail.com</strong>.
-    </p>
-
-    <h2 style="font-size: 1.3rem; margin-top: 28px; margin-bottom: 12px; color: #111;">6. Propriété intellectuelle</h2>
-    <p>
-      Tous les contenus (textes, visuels, logo, arborescence) figurant sur le site masscleanparis.fr sont protégés par le droit de la propriété intellectuelle et sont la propriété exclusive de MASS CLEAN PARIS. Toute reproduction totale ou partielle sans accord préalable est strictement interdite.
-    </p>
-
-    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
-      <a href="index.html" class="btn btn-primary" style="display: inline-block;">Retour à l'accueil</a>
+  <!-- Navigation principale -->
+  <header class="header">
+    <div class="wrap nav-wrap">
+      <a href="index.html" class="logo">MASS CLEAN PARIS</a>
+      <nav class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact & Devis</a>
+      </nav>
     </div>
-  </main>
+  </header>
+
+  <!-- Contenu juridique -->
+  <section class="section">
+    <div class="wrap" style="max-width: 900px;">
+      <div class="card" style="padding: 40px; line-height: 1.7; color: var(--text-color, #333);">
+        <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 24px; color: var(--heading-color, #111);">Mentions légales</h1>
+
+        <h2 style="font-size: 1.3rem; margin-top: 32px; margin-bottom: 12px; color: var(--heading-color, #111);">1. Éditeur du site</h2>
+        <p>
+          Le site internet <strong>masscleanparis.fr</strong> est édité par la société <strong>MASS CLEAN PARIS</strong>.<br>
+          <strong>Forme juridique :</strong> Société par actions simplifiée unipersonnelle (SASU)<br>
+          <strong>Siège social :</strong> 16 Avenue de l'Industrie, 94200 Ivry-sur-Seine<br>
+          <strong>Numéro SIRET :</strong> 106 389 042 00016<br>
+          <strong>RCS :</strong> Immatriculée au Registre du commerce et des sociétés de Créteil<br>
+          <strong>Régime fiscal :</strong> Assujettie à la TVA (Régime réel simplifié d'imposition — RSI)<br>
+          <strong>Directeur de la publication :</strong> Mamoune GHOUL<br>
+          <strong>Téléphone :</strong> 06 59 57 12 48<br>
+          <strong>E-mail :</strong> masscleanparis@gmail.com
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin-top: 32px; margin-bottom: 12px; color: var(--heading-color, #111);">2. Assurance professionnelle</h2>
+        <p>
+          L'activité de MASS CLEAN PARIS est couverte par un contrat d'assurance responsabilité civile professionnelle (RC Pro) souscrit auprès de la compagnie <strong>Insify</strong>, garantissant les dommages corporels, matériels et immatériels causés dans le cadre de ses interventions en Île-de-France.
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin-top: 32px; margin-bottom: 12px; color: var(--heading-color, #111);">3. Dispositif de crédit d'impôt (Services à la personne)</h2>
+        <p>
+          Pour les prestations de nettoyage de vitres destinées aux particuliers éligibles au crédit d'impôt (avance immédiate de 50 %), la facturation et le traitement administratif sont assurés en partenariat avec la coopérative déclarée <strong>Unipros</strong>.
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin-top: 32px; margin-bottom: 12px; color: var(--heading-color, #111);">4. Hébergement</h2>
+        <p>
+          Le site est hébergé par :<br>
+          <strong>Vercel Inc.</strong><br>
+          440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br>
+          Site web : <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin-top: 32px; margin-bottom: 12px; color: var(--heading-color, #111);">5. Protection des données personnelles (RGPD)</h2>
+        <p>
+          Les données transmises via les formulaires de demande de devis et de rappel font l'objet d'un traitement exclusif par MASS CLEAN PARIS pour la gestion de la relation client et l'établissement des propositions commerciales. L'acheminement sécurisé des messages est opéré par <strong>Web3Forms</strong>.<br>
+          Conformément au RGPD et à la loi « Informatique et Libertés », vous pouvez exercer vos droits d'accès, de modification ou de suppression en adressant un e-mail à : <strong>masscleanparis@gmail.com</strong>.
+        </p>
+
+        <h2 style="font-size: 1.3rem; margin-top: 32px; margin-bottom: 12px; color: var(--heading-color, #111);">6. Propriété intellectuelle</h2>
+        <p>
+          Tous les éléments visuels, textuels et graphiques du site sont la propriété exclusive de MASS CLEAN PARIS. Toute reproduction, même partielle, est interdite sans autorisation préalable écrite.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer officiel -->
+  <footer class="footer">
+    <div class="wrap footer-wrap" style="text-align: center; padding: 40px 0;">
+      <p>© 2026 MASS CLEAN PARIS — Tous droits réservés.</p>
+      <p style="margin-top: 10px; font-size: 0.95rem;">
+        <a href="mentions-legales.html">Mentions légales</a> — <a href="cgv.html">CGV</a>
+      </p>
+    </div>
+  </footer>
+
 </body>
 </html>
