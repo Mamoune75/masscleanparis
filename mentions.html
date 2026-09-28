@@ -10,29 +10,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    .legal-card {
+      padding: 56px 48px;
+      margin: 32px auto;
+      max-width: 880px;
+    }
     .legal-content h1 {
-      margin-bottom: 32px;
-      font-size: 2.2rem;
+      margin-bottom: 24px;
+      font-size: 2.3rem;
+      letter-spacing: -0.02em;
+    }
+    .legal-content .legal-intro {
+      font-size: 0.98rem;
+      color: #555;
+      margin-bottom: 36px;
+      line-height: 1.7;
     }
     .legal-content h2 {
-      margin-top: 36px;
-      margin-bottom: 14px;
+      margin-top: 40px;
+      margin-bottom: 16px;
       font-size: 1.35rem;
       color: #111;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #edf2f7;
     }
     .legal-content p {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       line-height: 1.8;
       color: #444;
     }
     .legal-list {
-      margin: 8px 0 20px 0;
+      margin: 12px 0 24px 0;
       padding: 0;
       list-style: none;
     }
     .legal-list li {
-      margin-bottom: 8px;
-      line-height: 1.6;
+      margin-bottom: 10px;
+      line-height: 1.7;
+      color: #444;
+    }
+    .legal-list strong {
+      color: #111;
+    }
+    @media (max-width: 768px) {
+      .legal-card {
+        padding: 32px 20px;
+      }
+      .legal-content h1 {
+        font-size: 1.85rem;
+      }
     }
   </style>
 </head>
@@ -63,49 +89,93 @@
 </header>
 
 <main class="section">
-  <div class="wrap" style="max-width: 860px;">
-    
-    <article class="card legal-content" style="padding: 48px 40px; margin: 20px auto;">
+  <div class="wrap">
+    <article class="card legal-card legal-content">
       <h1>Mentions légales</h1>
+      
+      <p class="legal-intro">
+        En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), il est précisé aux utilisateurs du site internet <strong>masscleanparis.fr</strong> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.
+      </p>
 
       <h2>1. Éditeur du site</h2>
       <p>
-        Le site internet <strong>masscleanparis.fr</strong> est édité par la société <strong>MASS CLEAN PARIS</strong>.
+        Le site internet <strong>masscleanparis.fr</strong> est édité et exploité par la société <strong>MASS CLEAN PARIS</strong>.
       </p>
       <ul class="legal-list">
         <li><strong>Forme juridique :</strong> Société par actions simplifiée unipersonnelle (SASU)</li>
-        <li><strong>Siège social :</strong> 16 Avenue de l'Industrie, 94200 Ivry-sur-Seine</li>
-        <li><strong>Numéro SIRET :</strong> 106 389 042 00016</li>
+        <li><strong>Siège social :</strong> 16 Avenue de l'Industrie, 94200 Ivry-sur-Seine, France</li>
+        <li><strong>SIRET :</strong> 106 389 042 00016</li>
         <li><strong>RCS :</strong> Immatriculée au Registre du commerce et des sociétés de Créteil</li>
         <li><strong>Régime fiscal :</strong> Assujettie à la TVA (Régime réel simplifié d'imposition — RSI)</li>
         <li><strong>Directeur de la publication :</strong> Mamoune GHOUL</li>
-        <li><strong>Téléphone :</strong> 06 59 57 12 48</li>
+        <li><strong>Téléphone :</strong> (+33) 06 59 57 12 48</li>
         <li><strong>E-mail :</strong> masscleanparis@gmail.com</li>
       </ul>
 
-      <h2>2. Assurance responsabilité civile</h2>
+      <h2>2. Assurance responsabilité civile professionnelle</h2>
       <p>
-        L'activité de MASS CLEAN PARIS est couverte par un contrat d'assurance responsabilité civile professionnelle (RC Pro) souscrit auprès de la compagnie <strong>Insify</strong>, garantissant l'ensemble des interventions réalisées en Île-de-France.
+        L'activité professionnelle de nettoyage de surfaces vitrées exercée par MASS CLEAN PARIS est couverte par un contrat d'assurance responsabilité civile professionnelle (RC Pro) souscrit auprès de la compagnie <strong>Insify</strong>, couvrant l'ensemble de ses interventions et travaux en Île-de-France.
       </p>
 
-      <h2>3. Avance immédiate & Coopérative Unipros</h2>
+      <h2>3. Dispositif de crédit d'impôt (Services à la personne)</h2>
       <p>
-        Pour permettre à ses clients particuliers de bénéficier de l'avance immédiate du crédit d'impôt de 50 % pour les services à la personne, MASS CLEAN PARIS intervient en partenariat avec la coopérative agréée et déclarée <strong>Unipros</strong>.
+        Pour permettre à ses clients particuliers de bénéficier de l'avance immédiate du crédit d'impôt de 50 % prévu par l'article 199 sexdecies du Code général des impôts, MASS CLEAN PARIS est adhérente et partenaire de la coopérative de services à la personne agréée et déclarée <strong>Unipros</strong>.
       </p>
 
-      <h2>4. Hébergement & Traitement des données</h2>
+      <h2>4. Hébergement du site</h2>
       <p>
-        <strong>Hébergeur :</strong> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.<br>
-        <strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>
+        Le site est hébergé par la société :<br>
+        <strong>Vercel Inc.</strong><br>
+        440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br>
+        Site web : <a href="https://vercel.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">vercel.com</a>
+      </p>
+
+      <h2>5. Propriété intellectuelle et contrefaçons</h2>
+      <p>
+        La société <strong>MASS CLEAN PARIS</strong> est propriétaire exclusive de l'ensemble des droits de propriété intellectuelle ou détient les droits d'usage sur tous les éléments accessibles sur le site internet, notamment les textes, typographies, images, graphismes, logos, icônes, photographies et structure générale.
       </p>
       <p>
-        <strong>Données personnelles (RGPD) :</strong> Les données collectées via les formulaires de demande de devis et de rappel (nom, e-mail, téléphone, ville, message) sont exclusivement destinées à MASS CLEAN PARIS pour l'étude et la réponse aux demandes commerciales. L'acheminement sécurisé des messages est pris en charge par <strong>Web3Forms</strong>.
+        Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est strictement interdite sauf autorisation écrite préalable de MASS CLEAN PARIS.
       </p>
       <p>
-        Conformément à la réglementation applicable, vous pouvez exercer vos droits d'accès, de rectification ou d'effacement de vos données en formulant une demande par e-mail à : <strong>masscleanparis@gmail.com</strong>.
+        Conformément aux articles L.122-4, L.335-2 et suivants du Code de la propriété intellectuelle, toute exploitation non autorisée du site ou d'un quelconque élément qu'il contient sera constitutive d'une contrefaçon passible de poursuites judiciaires.
+      </p>
+
+      <h2>6. Limitations de responsabilité</h2>
+      <p>
+        MASS CLEAN PARIS ne saurait être tenue pour responsable des éventuels dommages directs ou indirects causés au matériel de l'utilisateur lors de l'accès au site, résultant soit de l'apparition d'un bug, soit d'une incompatibilité technique.
+      </p>
+      <p>
+        Les informations diffusées sur le site sont fournies à titre indicatif pour renseigner le public sur les prestations proposées. Malgré le soin apporté à leur actualisation, MASS CLEAN PARIS décline toute responsabilité concernant les erreurs, omissions ou l'interprétation des contenus présentés.
+      </p>
+      <p>
+        Des espaces interactifs (formulaire de contact et de demande de devis) sont à disposition des utilisateurs. MASS CLEAN PARIS se réserve le droit de supprimer sans mise en demeure préalable tout message déposé qui contreviendrait à la législation applicable en France, notamment aux règles sur les communications illicites ou abusives.
+      </p>
+
+      <h2>7. Protection des données personnelles (RGPD)</h2>
+      <p>
+        Conformément au Règlement Général sur la Protection des Données (RGPD n° 2016/679) et à la loi n° 78-17 du 6 janvier 1978 modifiée (« Informatique et Libertés »), les données collectées via le formulaire de demande de devis (nom, e-mail, téléphone, commune, caractéristiques de la demande) sont strictement destinées à la société MASS CLEAN PARIS pour l'étude et la réponse aux demandes commerciales.
+      </p>
+      <p>
+        L'acheminement sécurisé des formulaires de contact est opéré par le service tiers <strong>Web3Forms</strong>. Aucune donnée personnelle n'est cédée, louée ou commercialisée à des tiers.
+      </p>
+      <p>
+        Vous disposez d'un droit permanent d'accès, de rectification, de portabilité et d'effacement de vos données personnelles. Pour exercer ces droits, vous pouvez adresser votre demande par courrier électronique à : <strong>masscleanparis@gmail.com</strong>.
+      </p>
+
+      <h2>8. Liens hypertextes et cookies</h2>
+      <p>
+        Le site masscleanparis.fr peut comporter des liens hypertextes redirigeant vers des sites tiers (notamment les réseaux sociaux de l'entreprise). MASS CLEAN PARIS n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou leur politique de confidentialité.
+      </p>
+      <p>
+        La navigation sur le site ne requiert pas le dépôt de traceurs publicitaires intrusifs. Les seuls traceurs éventuellement émis se limitent à la mesure technique d'audience et de performance strictement anonymisée, ou sont soumis au paramétrage direct de votre navigateur. La durée de validité de tout consentement éventuellement recueilli est de 6 mois maximum, conformément aux recommandations de la CNIL.
+      </p>
+
+      <h2>9. Droit applicable et attribution de juridiction</h2>
+      <p>
+        Tout litige en relation avec l'utilisation du site masscleanparis.fr est soumis au droit français. En dehors des cas où la loi accorde compétence expresse au consommateur, attribution exclusive de juridiction est faite aux tribunaux compétents du ressort du tribunal de commerce de <strong>Créteil</strong>.
       </p>
     </article>
-
   </div>
 </main>
 
